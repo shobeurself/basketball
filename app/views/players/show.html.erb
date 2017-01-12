@@ -1,0 +1,24 @@
+<p>
+	<strong>Name:</strong>
+	<%= @player.name %>
+</p>
+<p>
+	<strong>Team:</strong>
+	<%= @player.team %>
+</p>
+<h2>Add a team</h2>
+<%= form_for[@player, @player.teams.build] do |f| %>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :state %><br>
+		<%= f.text_field :state %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
+<%= link_to 'Edit', edit_player_path %>
+<%= link_to 'Back', players_path %>
